@@ -1,0 +1,82 @@
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'caviar';
+	src:url('../fonts/Caviar_Dreams_Bold.ttf');
+	
+}
+
+
+html { 
+  background: url(../img/nyc.gif) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pattern{
+	position: fixed;
+	top: 0;
+	width: 110%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .15);
+	
+	margin-left: -2%;
+
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color:#330066 ;
+}
+h1 {
+	text-align:center;
+}
+#logo
+{
+	background: white;
+	z-index: 100000;
+  width: 35%;
+  font-size: 300%;
+  padding: 10px;
+  font-family: "caviar";
+  color: #330066;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: .8;
+}
+
+
+.logo1 {
+
+background: black;
+	z-index: 100000;
+  width: 25%;
+  padding: 10px;
+  font-family: "caviar";
+  color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: .8;
+}
+
+
+.logo1:hover{
+
+background: white;
+color: #330066;
+
+opacity: 1;
+transition: 2s;
+-webkit-transition: 1s; /* Safari */
+-moz-transition: 1s;
+
+
+	};

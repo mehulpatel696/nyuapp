@@ -1,0 +1,119 @@
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>NYU Story</title>
+		<meta name="description" content="Minimal Form Interface: Simplistic, single input view form" />
+		<meta name="keywords" content="form, minimal, interface, single input, big form, responsive form, transition" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize1.css" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo1.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/component1.css" />
+		
+		<script src="js/modernizr.custom.js"></script>
+		
+		<script src="js/modernizr.custom1.js"></script>
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div class="container">
+		
+			<header class="codrops-header">
+				<h1>My NYU Story <span>Share your story with the rest of NYU! </span></h1>	
+			</header>
+			<section>
+				
+				<form id="theForm" method="post" accept-charset="UTF-8" class="simform" action="/story" autocomplete="off">
+					<div class="simform-inner">
+						<ol class="questions">
+							<li>
+								<span><label for="q1">What is your name?</label></span>
+								<input id="q1" name="name" type="text"/>
+							</li>
+							<li>
+								<span><label for="q2">You are a?</label></span>
+								<input placeholder="Freshmen/Sophomore?" id="q2" name="year" type="text"/>
+							</li>
+							<li>
+								<span><label for="q3">What is your major?</label></span>
+								<input id="q3" name="major" type="text"/>
+							</li>
+							<li>
+								<span><label for="q4">What is your NYU email </label></span>
+									<input id="q4" name="email" type="text"/>
+							</li>
+						
+							
+						</ol><!-- /questions -->
+						<button class="submit" type="submit">Send answers</button>
+						<div class="controls">
+							<button class="next"></button>
+							<div class="progress"></div>
+							<span class="number">
+								<span class="number-current"></span>
+								<span class="number-total"></span>
+							</span>
+							<span class="error-message"></span>
+						</div><!-- / controls -->
+					</div><!-- /simform-inner -->
+					<span class="final-message">Hey</span>
+				</form><!-- /simform -->			
+			</section>
+			
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/classie1.js"></script>
+		<script src="js/stepsForm.js"></script>
+		<script src="js/uiProgressButton.js"></script>
+		<script>
+			var theForm = document.getElementById( 'theForm' );
+
+			new stepsForm( theForm, {
+				onSubmit : function( form ) {
+					// hide form
+					classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+					/*
+					form.submit()
+					or
+					AJAX request (maybe show loading indicator while we don't have an answer..)
+					*/
+
+					// let's just simulate something...
+					var messageEl = theForm.querySelector( '.final-message' );
+					messageEl.innerHTML = 'Thank you! Click submit and we will send you a link to write up your story <br><div class="progress-button elastic"><button style="background: teal; padding 20px; "><span>Submit</span></button></div>';
+					classie.addClass( messageEl, 'show' );
+
+				}
+			} );
+
+
+
+				[].slice.call( document.querySelectorAll( '.progress-button' ) ).forEach( function( bttn, pos ) {
+				new UIProgressButton( bttn, {
+					callback : function( instance ) {
+						var progress = 0,
+							interval = setInterval( function() {
+								progress = Math.min( progress + Math.random() * 0.1, 1 );
+								instance.setProgress( progress );
+
+								if( progress === 1 ) {
+									instance.stop( pos === 1 || pos === 3 ? -1 : 1 );
+									clearInterval( interval );
+								}
+							}, 150 );
+					}
+				} );
+			} );
+
+		</script>
+	</body>
+</html>

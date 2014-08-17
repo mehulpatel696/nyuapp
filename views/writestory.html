@@ -1,0 +1,56 @@
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Minimal Form Interface</title>
+		<meta name="description" content="Minimal Form Interface: Simplistic, single input view form" />
+		<meta name="keywords" content="form, minimal, interface, single input, big form, responsive form, transition" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="../css/normalize1.css" />
+		<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../css/demo1.css" />
+		<link rel="stylesheet" type="text/css" href="../css/writedemo.css" />
+		<link rel="stylesheet" type="text/css" href="../css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../css/component1.css" />
+		
+		<script src="../js/modernizr.custom.js"></script>
+		<script src="../js/modernizr.custom1.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header class="codrops-header">
+				<h2>{{name}}'s NYU Story</h2>	
+			</header>
+			<header class="codrops-header2">
+				<h2>{{year}} | {{major}}</h2>	
+			</header>
+			<section id="sec" >
+			<form method='post' accept="charset utf-8" action="/savestory" style="position: relative; top: -50px;">
+
+					<input type="text" name="theid" value="{{id}}" style="display:none" />
+					{{#if story}}
+						<input type="text"  class = "story" style="color:white" id="title" name="title" placeholder="{{story.title}}" >  </input><br>
+						
+						<textarea  class = "story"name="theStory" type="text" id="thestory">{{story.body}}</textarea>
+					{{else}}
+						<input type="text"  style="color:white" class = "story"  id="title" name="title" placeholder="Title of your story (Click to edit)" >  </input><br>
+						
+						<textarea  class = "story"name="theStory" type="text" id="thestory">Your Story (click to edit)</textarea>
+					{{/if}}
+					
+					
+		</section>
+		<header class="codrops-header3">
+				
+		
+			<button id="bttn" type="submit" name="submit">  Submit </submit> 
+
+		
+		</form>
+			</header>
+
+</body>
+</html>
