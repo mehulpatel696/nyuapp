@@ -20,8 +20,8 @@ var path = require('path');
 var busboy = require('connect-busboy');
 app.use(busboy()); 
 
-//var uri = 'mongodb://heroku_app21925448:4p7tgven51i7j1at8uepeviji0@ds027809.mongolab.com:27809/heroku_app21925448';
-var uri = 'mongodb://heroku_app21925448_A:WnKoqXpEKCEohaxGnDZQHJFNXoDmWGZF@ds027809.mongolab.com:27809/heroku_app21925448'
+
+var uri = 'your mongodb uri'
 mongoose.connect(uri);
 
 var storySchema = mongoose.Schema({
@@ -170,8 +170,8 @@ app.get('/writestory/:token', function(req, res) {
 // 			//Send an SMS text message
 // 			client.sendMessage({
 
-// 			    to:'+9176889963', // Any number Twilio can deliver to
-// 			    from: '+16463628726', // A number you bought from Twilio and can use for outbound communication
+// 			    to:'+91963', // Any number Twilio can deliver to
+// 			    from: '+16463726', // A number you bought from Twilio and can use for outbound communication
 // 			    body: 'word to your mother.' // body of the SMS message
 
 // 			}, function(err, responseData) { //this function is executed when a response is received from Twilio
