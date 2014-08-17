@@ -203,8 +203,8 @@ function sendEMail(to,from, subject, text ) {
 var smtpTransport = nodemailer.createTransport("SMTP",{
     service: "Gmail",
     auth: {
-        user: "lodo1928@gmail.com",
-        pass: "lionandtiger12"
+        user: "youremail",
+        pass: "youpassword"
     }
 });
 
